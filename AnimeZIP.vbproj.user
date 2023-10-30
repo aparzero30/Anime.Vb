@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="custom\AnimeCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="custom\AnimePanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="custom\EpisodeCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="custom\InfoPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="custom\SourceCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="custom\WatchPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
