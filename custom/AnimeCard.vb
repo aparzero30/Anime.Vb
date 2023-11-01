@@ -19,11 +19,22 @@
     End Sub
 
     Private Sub AnimeCard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+
         If Anime.Title.Length <= 46 Then
             Title.Text = Anime.Title
         Else
             Title.Text = Anime.Title.Substring(0, 46)
         End If
+
+        If String.IsNullOrEmpty(Anime.Title) Then
+            Title.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Anime.Id.Replace("-", " "))
+
+
+        End If
+
 
         AnimeUtil.SetImage(Anime.Image, AnimePic)
     End Sub
@@ -45,11 +56,17 @@
         ' Dim imagePath As String = "C:\Users\jimci\OneDrive\Desktop\Code\AnimeZIP\img\loading.gif"
         'Me.BackgroundImage = Image.FromFile(imagePath)
 
+
         Dim newAnime = Await HttpService.GetAnimeInfo(Anime.Id)
+
+
+
         parentForm.Text = Anime.Title
+
         Dim infoPanel As New InfoPanel(parentForm)
         infoPanel.SetAnime(newAnime)
         infoPanel.LoadEpisodes()
+
         parentForm.SetInfoPanel(infoPanel)
     End Sub
 

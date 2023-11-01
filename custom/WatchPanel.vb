@@ -195,18 +195,10 @@
             vlcInstalled = True
         End If
 
-        ' Alternatively, you can check the Windows Registry for VLC installation
-        ' You may need to import the Microsoft.Win32 namespace for this
-        'Dim key As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\VideoLAN\VLC")
-        'If key IsNot Nothing Then
-        '    vlcInstalled = True
-        '    key.Close()
-        'End If
-
-        ' If VLC is installed, hide the "Install" button and label
         If vlcInstalled Then
             Install.Visible = False
-            VlcLabel.Visible = False
+            ' VlcLabel.Visible = False
+            VlcLabel.Text = anime.Description
         End If
     End Sub
 

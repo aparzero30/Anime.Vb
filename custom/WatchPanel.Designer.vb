@@ -95,7 +95,7 @@ Partial Class WatchPanel
         ' SourcePanel
         ' 
         SourcePanel.BorderStyle = BorderStyle.FixedSingle
-        SourcePanel.Location = New Point(53, 389)
+        SourcePanel.Location = New Point(50, 412)
         SourcePanel.Name = "SourcePanel"
         SourcePanel.Padding = New Padding(10)
         SourcePanel.Size = New Size(769, 75)
@@ -122,12 +122,12 @@ Partial Class WatchPanel
         Label3.Cursor = Cursors.Hand
         Label3.Font = New Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.ForeColor = Color.FromArgb(CByte(22), CByte(196), CByte(182))
-        Label3.Location = New Point(65, 380)
+        Label3.Location = New Point(62, 403)
         Label3.MaximumSize = New Size(850, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(71, 19)
+        Label3.Size = New Size(129, 19)
         Label3.TabIndex = 8
-        Label3.Text = "SOURCES"
+        Label3.Text = "CHOOSE QUALITY"
         ' 
         ' JumpLabel
         ' 
@@ -135,7 +135,7 @@ Partial Class WatchPanel
         JumpLabel.Cursor = Cursors.Hand
         JumpLabel.Font = New Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point)
         JumpLabel.ForeColor = Color.White
-        JumpLabel.Location = New Point(53, 325)
+        JumpLabel.Location = New Point(48, 342)
         JumpLabel.MaximumSize = New Size(850, 0)
         JumpLabel.Name = "JumpLabel"
         JumpLabel.Size = New Size(38, 13)
@@ -148,7 +148,7 @@ Partial Class WatchPanel
         JumpInput.BorderStyle = BorderStyle.None
         JumpInput.Font = New Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point)
         JumpInput.ForeColor = Color.White
-        JumpInput.Location = New Point(62, 344)
+        JumpInput.Location = New Point(57, 361)
         JumpInput.Name = "JumpInput"
         JumpInput.PlaceholderText = "1"
         JumpInput.Size = New Size(62, 24)
@@ -157,7 +157,7 @@ Partial Class WatchPanel
         ' Panel1
         ' 
         Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Location = New Point(53, 340)
+        Panel1.Location = New Point(48, 357)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(78, 34)
         Panel1.TabIndex = 12
@@ -169,7 +169,7 @@ Partial Class WatchPanel
         Label4.Cursor = Cursors.Hand
         Label4.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label4.ForeColor = Color.FromArgb(CByte(47), CByte(49), CByte(54))
-        Label4.Location = New Point(138, 339)
+        Label4.Location = New Point(133, 356)
         Label4.Name = "Label4"
         Label4.Padding = New Padding(8)
         Label4.Size = New Size(49, 37)
@@ -181,7 +181,7 @@ Partial Class WatchPanel
         VlcLabel.AutoSize = True
         VlcLabel.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point)
         VlcLabel.ForeColor = Color.White
-        VlcLabel.Location = New Point(51, 169)
+        VlcLabel.Location = New Point(50, 118)
         VlcLabel.MaximumSize = New Size(769, 0)
         VlcLabel.Name = "VlcLabel"
         VlcLabel.Size = New Size(767, 60)
@@ -195,7 +195,7 @@ Partial Class WatchPanel
         Install.Cursor = Cursors.Hand
         Install.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Install.ForeColor = Color.White
-        Install.Location = New Point(53, 242)
+        Install.Location = New Point(52, 191)
         Install.MaximumSize = New Size(850, 0)
         Install.Name = "Install"
         Install.Padding = New Padding(5)

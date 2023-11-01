@@ -184,9 +184,12 @@ Public Class AnimePanel
                 imgFileName = "xclose.png"
                 SearchClick()
                 srchEnable = True
+                parentForm.Text = "Search Result"
             Else
+                SearchInput.Text = ""
                 imgFileName = "search.png"
                 SetAnime(airingAnime)
+                parentForm.Text = "Anime.ZIP"
             End If
 
             searchOn = Not searchOn

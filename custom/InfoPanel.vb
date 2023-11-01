@@ -13,6 +13,8 @@ Public Class InfoPanel
 
     Private favourites As New List(Of Anime)
 
+    Private httpService As New HttpService()
+
 
     Private filePath As String = Path.Combine(Application.StartupPath, "img\")
 
@@ -29,7 +31,12 @@ Public Class InfoPanel
     End Sub
 
     Private Sub InfoPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+
         Title.Text = anime.Title.ToUpper()
+        parentForm.Text = anime.Title.ToUpper()
         AnimeUtil.SetImage(anime.Image, Banner)
 
         Description.Text = anime.Description
@@ -130,5 +137,13 @@ Public Class InfoPanel
         Dim animePanel As New AnimePanel(parentForm)
         parentForm.SetAnimePanel(animePanel)
         parentForm.Text = "Anime.ZIP"
+    End Sub
+
+    Private Async Sub Install_Click(sender As Object, e As EventArgs) Handles Install.Click
+        Dim lastEpisode = anime.Episodes.Last()
+        Dim sources = Await httpService.GetStreamingSources(lastEpisode.Id)
+        Dim watchPanel As New WatchPanel(parentForm, Me)
+        watchPanel.SetUpObject(anime.Episodes, sources, lastEpisode, anime)
+        parentForm.SetWatchPanel(watchPanel)
     End Sub
 End Class

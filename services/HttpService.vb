@@ -47,16 +47,25 @@ Public Class HttpService
         Dim httpClient As New HttpClient()
         Dim apiUrl As String = baseUrl + "/info/" + animeId
 
+
+
+
         Try
             Dim response As HttpResponseMessage = Await httpClient.GetAsync(apiUrl)
 
+
+
             If response.IsSuccessStatusCode Then
                 Dim responseContent As String = Await response.Content.ReadAsStringAsync()
-
+                ' MessageBox.Show(responseContent)
                 ' Deserialize the JSON response into the Anime object
+
+
                 Dim anime As Anime = JsonConvert.DeserializeObject(Of Anime)(responseContent)
 
                 Return anime
+
+
             Else
                 Console.WriteLine("API Request Failed: " & response.ReasonPhrase)
             End If

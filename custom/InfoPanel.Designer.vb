@@ -31,6 +31,7 @@ Partial Class InfoPanel
         ContextMenuStrip1 = New ContextMenuStrip(components)
         HeartPic = New PictureBox()
         PictureBox1 = New PictureBox()
+        Install = New Label()
         CType(Banner, ComponentModel.ISupportInitialize).BeginInit()
         CType(HeartPic, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -102,12 +103,28 @@ Partial Class InfoPanel
         PictureBox1.TabIndex = 14
         PictureBox1.TabStop = False
         ' 
+        ' Install
+        ' 
+        Install.AutoSize = True
+        Install.BackColor = Color.FromArgb(CByte(54), CByte(57), CByte(63))
+        Install.Cursor = Cursors.Hand
+        Install.Font = New Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point)
+        Install.ForeColor = Color.White
+        Install.Location = New Point(101, 447)
+        Install.MaximumSize = New Size(850, 0)
+        Install.Name = "Install"
+        Install.Padding = New Padding(5, 7, 5, 7)
+        Install.Size = New Size(191, 34)
+        Install.TabIndex = 16
+        Install.Text = "WATCH LATEST EPISODE"
+        ' 
         ' InfoPanel
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(47), CByte(49), CByte(54))
+        Controls.Add(Install)
         Controls.Add(PictureBox1)
         Controls.Add(HeartPic)
         Controls.Add(EpisodePanel)
@@ -130,4 +147,5 @@ Partial Class InfoPanel
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents HeartPic As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Install As Label
 End Class
