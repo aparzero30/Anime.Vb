@@ -2,6 +2,7 @@
 
 
     Private parentForm As Form1
+    Private parentAnime As InfoPanel
     Private episodes As List(Of Episode)
     Private sources As List(Of Source)
     Private episode As New Episode()
@@ -19,13 +20,14 @@
     End Sub
 
 
-    Public Sub New(form As Form1)
+    Public Sub New(form As Form1, animePanel As InfoPanel)
         InitializeComponent()
         parentForm = form
+        parentAnime = animePanel
     End Sub
 
     Private Sub WatchPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        CheckIfVlcInstalled()
 
         parentForm.Text = episode.Id.ToUpper()
 
@@ -62,10 +64,10 @@
     Private Async Sub MoveEpisode(index As Integer)
 
         If index >= 0 AndAlso index < episodes.Count Then
-            MessageBox.Show("loading")
+
             Dim targetEpisode As Episode = episodes(index)
 
-            Dim watchPanel As New WatchPanel(parentForm)
+            Dim watchPanel As New WatchPanel(parentForm, parentAnime)
             Dim sources = Await httpService.GetStreamingSources(targetEpisode.Id)
             watchPanel.SetUpObject(episodes, sources, targetEpisode, anime)
             parentForm.SetWatchPanel(watchPanel)
@@ -96,9 +98,8 @@
     End Sub
 
     Private Sub SetUpAnimeInfoPanel()
-        Dim infoPanel As New InfoPanel(parentForm)
-        infoPanel.SetAnime(anime)
-        parentForm.SetInfoPanel(infoPanel)
+
+        parentForm.SetInfoPanel(parentAnime)
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
@@ -122,6 +123,7 @@
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
         Dim animePanel As New AnimePanel(parentForm)
+        parentForm.Text = "Anime.ZIP"
         parentForm.SetAnimePanel(animePanel)
     End Sub
 
@@ -173,4 +175,42 @@
     Private Sub Label4_Click_1(sender As Object, e As EventArgs) Handles Label4.Click
         MoveEpisode(Integer.Parse(JumpInput.Text) - 1)
     End Sub
+
+    Private Sub Install_Click(sender As Object, e As EventArgs) Handles Install.Click
+        Dim vlcWebsiteURL As String = "https://www.videolan.org/vlc/"
+
+        ' Use the default web browser to open the specified URL
+        Process.Start(New ProcessStartInfo With {
+            .FileName = vlcWebsiteURL,
+            .UseShellExecute = True
+        })
+    End Sub
+
+    Private Sub CheckIfVlcInstalled()
+        Dim vlcInstalled As Boolean = False
+
+        ' Check if VLC is installed by looking for the executable in a common installation path
+        Dim vlcPath As String = "C:\Program Files\VideoLAN\VLC\vlc.exe" ' You can modify this path as needed
+        If System.IO.File.Exists(vlcPath) Then
+            vlcInstalled = True
+        End If
+
+        ' Alternatively, you can check the Windows Registry for VLC installation
+        ' You may need to import the Microsoft.Win32 namespace for this
+        'Dim key As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\VideoLAN\VLC")
+        'If key IsNot Nothing Then
+        '    vlcInstalled = True
+        '    key.Close()
+        'End If
+
+        ' If VLC is installed, hide the "Install" button and label
+        If vlcInstalled Then
+            Install.Visible = False
+            VlcLabel.Visible = False
+        End If
+    End Sub
+
+
+
+
 End Class

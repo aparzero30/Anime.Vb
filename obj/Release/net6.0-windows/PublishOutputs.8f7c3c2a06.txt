@@ -1,0 +1,6 @@
+C:\Users\jimci\OneDrive\Desktop\output\AnimeZIP.exe
+C:\Users\jimci\OneDrive\Desktop\output\AnimeZIP.dll
+C:\Users\jimci\OneDrive\Desktop\output\AnimeZIP.deps.json
+C:\Users\jimci\OneDrive\Desktop\output\AnimeZIP.runtimeconfig.json
+C:\Users\jimci\OneDrive\Desktop\output\AnimeZIP.pdb
+C:\Users\jimci\OneDrive\Desktop\output\Newtonsoft.Json.dll

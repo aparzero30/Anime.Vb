@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="VlcLabel.Text" xml:space="preserve">
+    <value>To play the video, you must have VLC (VideoLAN Client) installed on your computer. VLC is a versatile and widely-used media player that can handle a variety of multimedia formats and codecs. If you don't have VLC installed, you can download and install it from the official VLC website (https://www.videolan.org/vlc/). Once VLC is installed, you'll be able to enjoy your videos without any compatibility issues, as it provides excellent support for a wide range of video and audio formats.</value>
+  </data>
 </root>

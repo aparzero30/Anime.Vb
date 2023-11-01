@@ -22,6 +22,7 @@ Partial Class WatchPanel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(WatchPanel))
         Title = New Label()
         Prev = New Label()
         Nxt = New Label()
@@ -33,6 +34,8 @@ Partial Class WatchPanel
         JumpInput = New TextBox()
         Panel1 = New Panel()
         Label4 = New Label()
+        VlcLabel = New Label()
+        Install = New Label()
         SuspendLayout()
         ' 
         ' Title
@@ -173,11 +176,40 @@ Partial Class WatchPanel
         Label4.TabIndex = 13
         Label4.Text = "GO"
         ' 
+        ' VlcLabel
+        ' 
+        VlcLabel.AutoSize = True
+        VlcLabel.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point)
+        VlcLabel.ForeColor = Color.White
+        VlcLabel.Location = New Point(51, 169)
+        VlcLabel.MaximumSize = New Size(769, 0)
+        VlcLabel.Name = "VlcLabel"
+        VlcLabel.Size = New Size(767, 60)
+        VlcLabel.TabIndex = 14
+        VlcLabel.Text = resources.GetString("VlcLabel.Text")
+        ' 
+        ' Install
+        ' 
+        Install.AutoSize = True
+        Install.BackColor = Color.FromArgb(CByte(54), CByte(57), CByte(63))
+        Install.Cursor = Cursors.Hand
+        Install.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Install.ForeColor = Color.White
+        Install.Location = New Point(53, 242)
+        Install.MaximumSize = New Size(850, 0)
+        Install.Name = "Install"
+        Install.Padding = New Padding(5)
+        Install.Size = New Size(115, 31)
+        Install.TabIndex = 15
+        Install.Text = "INSTALL VLC"
+        ' 
         ' WatchPanel
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(47), CByte(49), CByte(54))
+        Controls.Add(Install)
+        Controls.Add(VlcLabel)
         Controls.Add(Label4)
         Controls.Add(JumpLabel)
         Controls.Add(JumpInput)
@@ -206,4 +238,6 @@ Partial Class WatchPanel
     Friend WithEvents JumpInput As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
+    Friend WithEvents VlcLabel As Label
+    Friend WithEvents Install As Label
 End Class

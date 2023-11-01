@@ -1,0 +1,6 @@
+C:\Users\jimci\OneDrive\Desktop\Code\AnimeZIP\bin\Release\net6.0-windows\publish\AnimeZIP.exe
+C:\Users\jimci\OneDrive\Desktop\Code\AnimeZIP\bin\Release\net6.0-windows\publish\AnimeZIP.dll
+C:\Users\jimci\OneDrive\Desktop\Code\AnimeZIP\bin\Release\net6.0-windows\publish\AnimeZIP.deps.json
+C:\Users\jimci\OneDrive\Desktop\Code\AnimeZIP\bin\Release\net6.0-windows\publish\AnimeZIP.runtimeconfig.json
+C:\Users\jimci\OneDrive\Desktop\Code\AnimeZIP\bin\Release\net6.0-windows\publish\AnimeZIP.pdb
+C:\Users\jimci\OneDrive\Desktop\Code\AnimeZIP\bin\Release\net6.0-windows\publish\Newtonsoft.Json.dll

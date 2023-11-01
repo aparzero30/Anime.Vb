@@ -1,0 +1,7 @@
+C:\Users\jimci\OneDrive\Desktop\output\AnimeZIP.pdb
+C:\Users\jimci\OneDrive\Desktop\output\D3DCompiler_47_cor3.dll
+C:\Users\jimci\OneDrive\Desktop\output\PenImc_cor3.dll
+C:\Users\jimci\OneDrive\Desktop\output\PresentationNative_cor3.dll
+C:\Users\jimci\OneDrive\Desktop\output\vcruntime140_cor3.dll
+C:\Users\jimci\OneDrive\Desktop\output\wpfgfx_cor3.dll
+C:\Users\jimci\OneDrive\Desktop\output\AnimeZIP.exe

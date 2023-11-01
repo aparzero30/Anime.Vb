@@ -1,0 +1,43 @@
+[
+  {
+    "Id": "spy-x-family-season-2",
+    "Title": "Spy x Family Season 2",
+    "Url": "https://gogoanimehd.io/category/spy-x-family-season-2",
+    "Image": "https://gogocdn.net/cover/spy-x-family-season-2-1696012743.png",
+    "ReleaseDate": "2023",
+    "Description": "Second season of Spy x Family.",
+    "Genres": [
+      "Action",
+      "Childcare",
+      "Comedy",
+      "Shounen"
+    ],
+    "SubOrDub": "sub",
+    "Type": "FALL 2023 ANIME",
+    "Status": "Ongoing",
+    "OtherName": "SPY×FAMILY Season 2",
+    "TotalEpisodes": 4,
+    "Episodes": [
+      {
+        "Id": "spy-x-family-season-2-episode-1",
+        "Number": 1,
+        "Url": "https://gogoanimehd.io//spy-x-family-season-2-episode-1"
+      },
+      {
+        "Id": "spy-x-family-season-2-episode-2",
+        "Number": 2,
+        "Url": "https://gogoanimehd.io//spy-x-family-season-2-episode-2"
+      },
+      {
+        "Id": "spy-x-family-season-2-episode-3",
+        "Number": 3,
+        "Url": "https://gogoanimehd.io//spy-x-family-season-2-episode-3"
+      },
+      {
+        "Id": "spy-x-family-season-2-episode-4",
+        "Number": 4,
+        "Url": "https://gogoanimehd.io//spy-x-family-season-2-episode-4"
+      }
+    ]
+  }
+]

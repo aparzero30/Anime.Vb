@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "D9gATkMgdO3CDgYEG+6i86RA/qhp7dd3888+GQQ+U4ZedNZsUO0D3eham69dgO/fycyDe6ESgPT2BBFLzK/XKQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jimci\\OneDrive\\Desktop\\Code\\AnimeZIP\\AnimeZIP.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jimci\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

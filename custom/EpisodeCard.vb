@@ -8,12 +8,14 @@
 
 
     Private parentForm As Form1
+    Private parentAnime As InfoPanel
 
-
-    Public Sub New(form As Form1)
+    Public Sub New(form As Form1, animePanel As InfoPanel)
         InitializeComponent()
         parentForm = form
+        parentAnime = animePanel
     End Sub
+
 
     Public Sub SetEpisode(epis As Episode, episs As List(Of Episode), ani As Anime)
         ep = epis
@@ -36,7 +38,7 @@
     Private Async Sub LoadEpisode()
 
         Dim sources = Await httpService.GetStreamingSources(ep.Id)
-        Dim watchPanel As New WatchPanel(parentForm)
+        Dim watchPanel As New WatchPanel(parentForm, parentAnime)
         watchPanel.SetUpObject(episodes, sources, ep, anime)
         parentForm.SetWatchPanel(watchPanel)
     End Sub

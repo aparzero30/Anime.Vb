@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "krJE47pmy1aHFc+fDHD58Aioq38v1FTqmLDtjrMey0wkQe6QV67jLjK42zcRZbSW0AH8FqFvz3Qf+g+Elq8lcg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jimci\\OneDrive\\Desktop\\Code\\AnimeZIP\\AnimeZIP.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jimci\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\jimci\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.21\\microsoft.netcore.app.runtime.win-x86.6.0.21.nupkg.sha512",
+    "C:\\Users\\jimci\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.21\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.21.nupkg.sha512",
+    "C:\\Users\\jimci\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.21\\microsoft.aspnetcore.app.runtime.win-x86.6.0.21.nupkg.sha512",
+    "C:\\Users\\jimci\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.21\\microsoft.netcore.app.crossgen2.win-x64.6.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}

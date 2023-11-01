@@ -1,9 +1,20 @@
-﻿Public Class InfoPanel
+﻿Imports System.IO
+
+Public Class InfoPanel
 
 
-    Private Anime As Anime
+    Private anime As Anime
 
     Private parentForm As Form1
+
+    Private jsonService As New JsonService()
+
+    Private isFave = False
+
+    Private favourites As New List(Of Anime)
+
+
+    Private filePath As String = Path.Combine(Application.StartupPath, "img\")
 
 
     Public Sub New(form As Form1)
@@ -14,38 +25,110 @@
 
 
     Public Sub SetAnime(anim As Anime)
-        Anime = anim
+        anime = anim
     End Sub
 
     Private Sub InfoPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Title.Text = Anime.Title.ToUpper()
-        AnimeUtil.SetImage(Anime.Image, Image)
+        Title.Text = anime.Title.ToUpper()
+        AnimeUtil.SetImage(anime.Image, Banner)
 
-        Description.Text = Anime.Description
-        LoadEpisodes()
+        Description.Text = anime.Description
+
+
+        isFave = jsonService.AnimeExistsById(anime.Id)
+
+
+
+
+
+        HeartPic.BackgroundImageLayout = ImageLayout.Stretch
+
+
+        Dim imgFileName As String
+
+        If isFave Then
+            imgFileName = "heart2.png"
+
+        Else
+            imgFileName = "heart1.png"
+
+        End If
+
+
+        Dim imgPath As String = Path.Combine(Application.StartupPath, "img", imgFileName)
+        HeartPic.BackgroundImage = Image.FromFile(imgPath)
+
+
+
+
+
+
     End Sub
-    Private Sub LoadEpisodes()
 
 
 
-        For Each ep As Episode In Anime.Episodes
 
-            Dim epCard As New EpisodeCard(parentForm)
-            epCard.SetEpisode(ep, Anime.Episodes, Anime)
+
+
+
+
+
+
+    Public Sub LoadEpisodes()
+
+
+
+
+        For Each ep As Episode In anime.Episodes
+
+            Dim epCard As New EpisodeCard(parentForm, Me)
+            epCard.SetEpisode(ep, anime.Episodes, anime)
 
             EpisodePanel.Controls.Add(epCard)
         Next
 
 
+
+
+
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles HeartPic.Click
 
 
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        HeartPic.BackgroundImageLayout = ImageLayout.Stretch
+        HeartPic.Image = Nothing
+
+        Dim imgFileName As String
+
+        If isFave Then
+            imgFileName = "heart1.png"
+            jsonService.DeleteAnimeById(anime.Id)
+            isFave = False
+
+        Else
+            imgFileName = "heart2.png"
+            jsonService.SaveAnime(anime)
+            isFave = True
+
+        End If
+        Dim imgPath As String = Path.Combine(Application.StartupPath, "img", imgFileName)
+        HeartPic.BackgroundImage = Image.FromFile(imgPath)
+
+
+
+
+
+
+
+
+
+    End Sub
+
+    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Dim animePanel As New AnimePanel(parentForm)
         parentForm.SetAnimePanel(animePanel)
+        parentForm.Text = "Anime.ZIP"
     End Sub
-
-
 End Class

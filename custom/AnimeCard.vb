@@ -19,11 +19,15 @@
     End Sub
 
     Private Sub AnimeCard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Anime.Title.Length <= 46 Then
+            Title.Text = Anime.Title
+        Else
+            Title.Text = Anime.Title.Substring(0, 46)
+        End If
 
-        Title.Text = Anime.Title
-
-        AnimeUtil.SetBg(Anime.Image, Me)
+        AnimeUtil.SetImage(Anime.Image, AnimePic)
     End Sub
+
 
     Private Sub AnimeCard_Click(sender As Object, e As EventArgs) Handles MyBase.Click
         SetUpAnimeInfoPanel()
@@ -45,10 +49,12 @@
         parentForm.Text = Anime.Title
         Dim infoPanel As New InfoPanel(parentForm)
         infoPanel.SetAnime(newAnime)
+        infoPanel.LoadEpisodes()
         parentForm.SetInfoPanel(infoPanel)
     End Sub
 
+    Private Sub AnimePic_Click(sender As Object, e As EventArgs) Handles AnimePic.Click
+        SetUpAnimeInfoPanel()
 
-
-
+    End Sub
 End Class
